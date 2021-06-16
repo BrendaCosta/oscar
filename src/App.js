@@ -12,7 +12,11 @@ function App() {
     handlePopulationCharacterers();
   }, [])
 
-  
+  function sortCharacterByVotes(a,b){
+    console.log(a, b);
+    return (a.votes > b.votes)?-1:(a.votes < b.votes)?1:0;
+
+}
 
   async function handlePopulationCharacterers(){
     const response = await fetch ('https://www.breakingbadapi.com/api/characters?limit=10', {
@@ -56,13 +60,13 @@ function App() {
     <div className="app">
       <Navbar />
       <h1>Podium</h1>
-      <Podium characters={characters} />
+      <Podium characters={characters} sortCharacterByVotes={sortCharacterByVotes}/>
       <h1>Vote no seu personagem favorito</h1>
     <div className="container"> 
       <div className="character-list">
           <Card characters={characters} handleAddVote={handleAddVote} showButtons/>
         </div>
-        <Ranking characters={characters} />
+        <Ranking characters={characters} sortCharacterByVotes={sortCharacterByVotes} />
     </div>
     </div>
   );

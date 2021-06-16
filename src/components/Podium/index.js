@@ -2,14 +2,14 @@ import "./style.css"
 import Card from "../Card";
 import { useEffect, useState } from "react";
 
-function Podium({characters}){
+function Podium({characters, sortCharacterByVotes}){
 	const [podium, setPodium] = useState([]);
 
-    // useEffect(() => {
-    //     const localCharacter = [...characters];
-    //     const ordered = localCharacter.sort(sortCharacterByVotes).slice(0, 3);
-    //     setPodium(ordered)
-    // }, [characters]);
+     useEffect(() => {
+         const localCharacter = [...characters];
+         const ordered = localCharacter.sort(sortCharacterByVotes).slice(0, 3);
+         setPodium(ordered)
+    }, [characters]);
 
     return(
         <>
