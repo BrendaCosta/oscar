@@ -1,0 +1,22 @@
+body{
+    margin: 0;
+}
+
+
+.app{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.character-list{
+    display: flex;
+    flex-wrap: wrap;
+}
